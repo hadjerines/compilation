@@ -6,10 +6,10 @@ typedef struct node {
     char ip[100];
 } pro;
 
-pro ar[100];
-int num[20];
+pro ar[80];
+int num[15];
 int p = 0;  // Counter for productions with left recursion
-int x;      // Total number of productions
+int x;      // the number of production 
 
 void add(int i, char newNonTerminal, int r) {
     char recursive[100] = "";
@@ -48,10 +48,10 @@ void add(int i, char newNonTerminal, int r) {
 }
 
 int main() {
-    printf(" Enter the number of productions: ");
+    printf(" Enter the number of productions of your grammaire : ");
     scanf("%d", &x);
 
-    printf(" Enter the productions: \n");
+    printf(" Enter the productions : \n");
     for (int i = 0; i < x; i++) {
         ar[i].n = i;
         printf(" Production %d: ", i + 1);
@@ -74,7 +74,7 @@ int main() {
         newNonTerminal++;           // Move to the next non-terminal letter (e.g., Y, Z, etc.)
         x++;                        // Increment the number of productions
     }
-
+// if dose not exist rec push to another one 
     printf(" AFTER REMOVING LEFT RECURSION:\n");
     for (int i = 0; i < x; i++) {
         printf(" %d %s\n", ar[i].n, ar[i].ip);
