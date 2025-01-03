@@ -44,7 +44,7 @@ void add(int i, char newNonTerminal, int r) {
     sprintf(ar[i].ip, "%c->%s", ar[i].ip[0], nonRecursive);
 
     // Create the new production for the recursive part
-    sprintf(ar[r].ip, "%c->%s|#", newNonTerminal, recursive);
+    sprintf(ar[r].ip, "%c->%s|ε", newNonTerminal, recursive);
 }
 
 int main() {
